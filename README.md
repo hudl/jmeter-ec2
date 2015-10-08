@@ -144,6 +144,8 @@ For example to get current price for t1.micro instance running Linux :
 
 ```ec2-describe-spot-price-history -H --instance-type t1.micro -d Linux/UNIX -s `date +"%Y-%m-%dT%H:%M:%SZ"````
 
+## Running Inside Docker in EC2
+View the README in the `docker_component` subdirectory on how to leverage JMeter with Docker in EC2. 
 
 ## Running locally with Vagrant
 [Vagrant](http://vagrantup.com) allows you to test your jmeter-ec2 scripts locally before pushing them to ec2.
