@@ -333,12 +333,10 @@ function runsetup() {
 
 		# assign a name tag to each instance
 		echo "assigning tags..."
-		(ec2-create-tags --region $REGION ${attempted_instanceids[@]} --tag ProductKey=$project)
-        (ec2-create-tags --region $REGION ${attempted_instanceids[@]} --tag Service=prod)
-        (ec2-create-tags --region $REGION ${attempted_instanceids[@]} --tag Description=PerformanceTest)
-        (ec2-create-tags --region $REGION ${attempted_instanceids[@]} --tag Owner=$EMAIL)
-        (ec2-create-tags --region $REGION ${attempted_instanceids[@]} --tag ContactEmail=$EMAIL)
 		(ec2-create-tags --region $REGION ${attempted_instanceids[@]} --tag Name="jmeter-ec2-$project")
+		(ec2-create-tags --region $REGION ${attempted_instanceids[@]} --tag Role="RoleJmeter")
+		(ec2-create-tags --region $REGION ${attempted_instanceids[@]} --tag Group="jmeter")
+		(ec2-create-tags --region $REGION ${attempted_instanceids[@]} --tag Environment="test")
 		wait
         echo "complete"
 		echo
