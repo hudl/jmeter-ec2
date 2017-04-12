@@ -173,7 +173,7 @@ function runsetup() {
       attempted_instanceids=(`aws ec2 run-instances \
                   --key-name "$AMAZON_KEYPAIR_NAME" \
                   --instance-type "$INSTANCE_TYPE" \
-                  --security-group-ids "$INSTANCE_SECURITYGROUP_IDS" \
+                  --security-group-ids $INSTANCE_SECURITYGROUP_IDS \
                   --count 1:$instance_count \
                   $vpcsettings \
                   --image-id $AMI_ID \
