@@ -309,7 +309,7 @@ function runsetup() {
       hosts=(`aws ec2 describe-instances --instance-ids ${attempted_instanceids[@]} \
 						--region $REGION \
 						--output text \
-						--query 'Reservations[].Instances[].PublicIpAddress'`)
+						--query 'Reservations[].Instances[].PrivateIpAddress'`)
 
       # echo "all hosts ready"
     else # Amazon probably failed to start a host [*** NOTE this is fairly common ***] so show a msg - TO DO. Could try to replace it with a new one?
@@ -325,7 +325,7 @@ function runsetup() {
       hosts=(`aws ec2 describe-instances --instance-ids ${healthy_instanceids[@]} \
 						--region $REGION \
 						--output text \
-						--query 'Reservations[].Instances[].PublicIpAddress'`)
+						--query 'Reservations[].Instances[].PrivateIpAddress'`)
 
       if [ "${#healthy_instanceids[@]}" -eq 0 ] ; then
         countof_instanceids=0
