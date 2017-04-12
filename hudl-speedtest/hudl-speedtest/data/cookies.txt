@@ -1,3 +1,0 @@
-# JMeter generated Cookie file
-	TRUE		FALSE	0	ident	a=q5Zb3y4msdfsVFCtbwLv7A&u=667547
-	TRUE		FALSE	0	t	176673
